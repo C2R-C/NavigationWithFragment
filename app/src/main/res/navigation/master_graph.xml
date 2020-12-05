@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.c2r.navigationwithfragment.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_inicioFragment_to_intermedioFragment"
+            app:destination="@id/intermedioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/intermedioFragment"
+        android:name="com.c2r.navigationwithfragment.IntermedioFragment"
+        android:label="fragment_intermedio"
+        tools:layout="@layout/fragment_intermedio" >
+        <action
+            android:id="@+id/action_intermedioFragment_to_finalFragment2"
+            app:destination="@id/finalFragment" />
+        <action
+            android:id="@+id/action_intermedioFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finalFragment"
+        android:name="com.c2r.navigationwithfragment.FinalFragment"
+        android:label="FinalFragment" >
+        <action
+            android:id="@+id/action_finalFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
+</navigation>
